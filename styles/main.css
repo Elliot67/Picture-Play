@@ -1,0 +1,532 @@
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Questrial';
+	background-color: #1E2020;
+}
+
+
+/********
+Preloader
+********/
+
+#preloader{
+	z-index: 500;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #b3b3b3e3;
+}
+
+#preloader > #preloader_container{
+	display: flex;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 150px;
+}
+
+#preloader > #preloader_container > div{
+	height: 40px;
+	width: 10px;
+	background-color: #00b0f0;
+	margin: 0 5px;
+	animation-name: loading;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+	0% {height: 40px; transform: translateY(0px); background-color: #00b0f0;}
+	25% {height: 100px; transform: translateY(-30px); background-color: #ac3493;}
+	50% {height: 40px; transform: translateY(0px);}
+	75% {background-color: #00b0f0;}
+}
+
+#preloader > #preloader_container > div:nth-child(1){
+
+}
+#preloader > #preloader_container > div:nth-child(2){
+	animation-delay: 0.10s;
+}
+#preloader > #preloader_container > div:nth-child(3){
+	animation-delay: 0.20s;
+}
+#preloader > #preloader_container > div:nth-child(4){
+	animation-delay: 0.30s;
+}
+#preloader > #preloader_container > div:nth-child(5){
+	animation-delay: 0.40s;
+}
+#preloader > #preloader_container > div:nth-child(6){
+	animation-delay: 0.50s;
+}
+
+/* Titre des parties (Une div avec h1 à l'intérieur pour faire l'encadrement*/
+.titreun{
+	padding: 1em 0;
+	color: white;
+	background-color: #1E2020;
+	text-align: center;
+}
+.titredeux{
+	padding: 1em 0;
+	color: #1E2020;
+	background-color: white;
+	text-align: center;
+}
+/* Les titres */
+h1{
+	margin: 0;
+	padding: 0 0.5em;
+	text-transform: uppercase;
+	font-family: 'Montserrat';
+	font-weight: bolder;
+	font-size: 2.3em;
+	display: inline-block;
+	max-width: 80vw;
+	width: 100vw; /* Pour que l'élement prenne le plus de place disponible (limité par le max-width) */
+}
+.hun{
+	border: solid white 8px;
+}
+.hdeux{
+	border: solid #1E2020 8px;
+}
+
+
+/********************
+Le menu de navigation
+********************/
+
+/* Sur son propre fichier menu.css */
+
+/****************
+Le bloc du slider
+****************/
+
+#cache{
+	overflow: hidden;
+	width: 100%;
+	height: 60vh;
+	padding: 0;
+	position: relative;
+}
+#logo_principal{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 20;
+	width: 160px;
+}
+
+/* Rectangle qui cache en travers le bas du slider */
+#cache > #rectangle{
+	position: absolute;
+	height: 500px;
+	width: 200%;
+	z-index: 6;
+	bottom: -400px;
+	left: -50%;
+	transform: rotate(-3deg);
+	background-color: white;
+}
+
+#image_mobile{
+	background-image: url('../img/slide1.jpg');
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	filter: blur(5px);
+}
+
+#slider_image{
+	display: none;
+}
+
+
+/******************************************************
+Les gros blocs qui alternent pour délimiter les parties
+******************************************************/
+
+.bloc{
+	padding: 30px;
+	margin: 0;
+	height: auto;
+	width: auto;
+}
+.un{
+	background-color: white;
+}
+
+.deux{
+	background-color: #1E2020;
+}
+
+
+/*********************************
+La partie présentation de l'agence
+*********************************/
+
+#bloc_presentation{
+	display: flex;
+	flex-direction: column;
+}
+#bloc_presentation > video{
+	max-width: 100%;
+}
+#bloc_de_droite{
+	/* En dessous de la vidéo pour mobile et tablette */
+}
+#bloc_presentation > div > p{
+	font-size: 1.2em;
+	text-align: justify;
+}
+#nouscontacter{
+	display: none;
+}
+
+
+/********************************
+La partie prestations de l'agence
+********************************/
+
+#bloc_prestations{
+	display: flex;
+	height: 1400px;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+/* Chaque image est dans un bloc individuel */
+.bloc_image{
+	width: 100%;
+	height: 350px;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+}
+
+#back{
+	display: none;
+}
+
+.bloc_image > img{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	min-height: 100%;
+	min-width: 100%;
+	opacity: 0.7;
+}
+
+/* A l'arrière de l'image, permet de l'assombrir avec l'opacité de l'image */
+.bloc_noir{
+	display: none;
+}
+
+/* Texte dans les parties */
+.nom_prestations{
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 5%;
+	transform: translateX(-50%);
+	padding: 0.2em;
+	margin: 0;
+	background-color: white;
+	text-transform: uppercase;
+	font-family: 'Montserrat';
+	font-size: 1.5em;
+	font-weight: bolder;
+	width: 10em;
+}
+
+/* Contenu qui apparait lors de l'agrandissement */
+.contenu{
+	position: absolute;
+	top: 30%;
+	right: 4%;
+	left: 4%;
+	background-color: white;
+	padding: 0.6em;
+	overflow: hidden;
+}
+.contenu > p{
+	padding: 0 0.5em;
+	font-size: 1.1em;
+	text-align: center;
+}
+.contenu > ul > li{
+	font-size: 0.9em;
+}
+
+
+/*********************************
+La partie présentation de l'équipe
+**********************************/
+
+#bloc_equipe{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.carte{
+	display: flex;
+}
+
+.avant{
+	display: none;
+}
+
+.arrière{
+	background-color: #00B0F0;
+}
+
+.arrière > img{
+	margin: auto;
+	width: 100%;
+	padding: 3em;
+	box-sizing: border-box;
+	background-color: white;
+}
+
+.arrière > h2{
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+	font-weight: bolder;
+	text-align: center;
+}
+.arrière > h3{
+	text-align: center;
+	font-style: italic;
+}
+.arrière > p{
+	text-align: justify;
+	padding: 10%;
+	font-size: 1.2em;
+}
+.arrière > a{
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	color: white;
+	background-color:black;
+	padding:  1em 20px;
+	padding-bottom: 1em;
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+}
+
+
+/*********************
+La partie des articles
+*********************/
+
+#bloc_articles{
+	background-color: #1E2020;
+	padding: 20px 5vw;
+}
+
+#toutArticle{
+	position: relative;
+	width: 90vw;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+	background-color: white;
+}
+
+#ensembleArticle{
+	position: absolute;
+	display: flex;
+	transition-duration: 1s;
+}
+
+.article{
+	box-sizing: border-box;
+	display: grid;
+	grid-template-areas: 'titre titre titre'
+								'contenu contenu contenu'
+								'rien rien plus';
+	width: 90vw;
+	padding: 2em 3em;
+}
+.article > h3{
+	grid-area: titre;
+	color: #00B0F0;
+	font-size: 1.9em;
+	text-align: center;
+	padding: 1em;
+	margin:0;
+}
+
+.article > p{
+	grid-area: contenu;
+	font-size: 1.1em;
+	padding: 0.5em 1em;
+	text-align: justify;
+	margin:0;
+}
+
+.article > a{
+	grid-area: plus;
+	text-decoration: none;
+	color: black;
+	size: 1.2em;
+	padding-top: 1.5em;
+	padding-bottom: 0.5em
+}
+
+.article > img{
+	grid-area: photo;
+	display: none;
+}
+
+.boutonArticle{
+	position: absolute;
+	bottom: 50%;
+	transform: translateY(50%);
+	height: 50px;
+	width: 50px;
+	background-size: cover;
+	transition-duration: 0.5s;
+}
+
+#prec{
+	left: 0;
+	background-image: url('../img/flecheGauche.svg');
+}
+
+#suiv{
+	right: 0;
+	background-image: url('../img/flecheDroit.svg');
+}
+
+
+/*********************
+La partie réalisations
+*********************/
+
+#bloc_realisations{
+	display: flex;
+	flex-direction: column;
+}
+#bloc_realisations > video{
+	max-width: 100%;
+}
+#bloc_de_droite{
+	/* En dessous de la vidéo pour mobile et tablette */
+}
+#bloc_realisations > div > p{
+	font-size: 1.2em;
+	text-align: justify;
+}
+
+
+
+/*****************
+Le bloc de contact
+*****************/
+
+#intermediaire{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #ffffff;
+	padding: 1em;
+}
+
+#intermediaire > #bloc_formulaire{
+	display: grid;
+	justify-content: center;
+	grid-template-areas:	"titre"
+							"nom"
+							"prenom"
+							"mail"
+							"tel"
+							"texte"
+							"envoyer";
+	grid-template-columns: 100%;
+	grid-template-rows: auto 50px 60px 50px 70px;
+}
+
+#intermediaire > #bloc_formulaire > h3{
+	grid-area: titre;
+	text-transform: uppercase;
+	color: #00B0F0;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: center;
+}
+.formulaire{
+	width: auto;
+	height: 30px;
+	padding: 5px;
+	margin: 10px;
+	border: solid #CCCCCC 1px;
+	background-color: #F2F2F2;
+	transition-duration: 0.6s;
+	font-family: 'Questrial';
+}
+
+#nom{
+	grid-area: nom;
+}
+#prenom{
+	grid-area: prenom;
+}
+#mail{
+	grid-area: mail;
+}
+#tel{
+	grid-area: tel;
+}
+#message{
+	grid-area: texte;
+	grid-column: span 2;
+	resize: none;
+	height: 150px
+}
+
+#envoyer{
+	grid-area: envoyer;
+	background-color: #00B0F0;
+	border: none;
+	width: 200px;
+	height: 50px;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bolder;
+	margin: 0 auto;
+}
+
+#plan{
+	margin-top: 50px;
+	height: 250px;
+}
+
+
+/********
+Le footer
+********/
+
+/* Sur son propre fichier footer.css */
+
+
+/********************
+Page mentions légales
+********************/
+
+/* Sur son propre fichier mentions_legales.css */

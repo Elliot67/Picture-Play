@@ -1,0 +1,93 @@
+/* Commun à toutes les pages du site */
+.bloc{
+	padding: 30px;
+	margin: 0;
+	height: auto;
+	width: auto;
+}
+
+.deux{
+	background-color: #1E2020;
+}
+
+
+/********
+Le footer
+********/
+
+/* Pour tout dont mobile */
+
+#bloc_footer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: auto;
+	z-index: -99;
+}
+/* Les petites parties  */
+#bloc_footer > div{
+	width: 80vw;
+	height: 150px;
+	padding: 5px;
+	text-align:center;
+	border-top: solid white 2px;
+}
+
+#bloc_footer > div:first-child{
+	border-top: none;
+}
+
+#bloc_footer > div > p{
+	color: white;
+}
+
+#bloc_footer > div > a > img{
+	display: inline-block;
+	height: 60px;
+	width:auto;
+}
+/* Partie des coordonnées */
+#texte_gros{
+	font-family: 'Montserrat';
+	font-size: 18px;
+	color: white;
+}
+.hauteur_ligne{
+	margin: 2px;
+}
+/* Texte avec redirection (mail & mentions légales) */
+.lien_contact{
+	text-decoration: none;
+	color: white;
+	padding: 5px;
+}
+
+#logo{
+	height: 60px;
+}
+
+/* Pour tablette dont ordinateur */
+@media screen and (min-width: 680px){
+	#bloc_footer{
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		flex-direction: row;
+		justify-content: center;
+		padding-bottom: 50px;
+	}
+
+	#bloc_footer > div{
+		border-left: solid white 2px;
+		border-top: none;
+	}
+	#bloc_footer > div:first-child{
+		border-left: none;
+	}
+
+	.lien_contact:hover{
+		text-decoration: underline;
+		font-size: bold;
+	}
+}

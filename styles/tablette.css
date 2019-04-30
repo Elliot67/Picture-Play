@@ -1,0 +1,196 @@
+/******************************************************
+Les gros blocs qui alternent pour délimiter les parties
+******************************************************/
+.bloc{
+	padding: 40px;
+}
+
+
+/********************
+Le menu de navigation
+********************/
+
+/* Son propre fichier menu.css */
+
+/****************
+Le bloc du slider
+****************/
+
+#cache{
+	height: 100vh;
+}
+
+#logo_principal{
+	width: 350px;
+}
+
+#image_mobile{
+	display: none;
+}
+
+#slider_image{
+	display: flex;
+	height: 100%;
+	width: 500%; /* Penser à changer cette valeur selon le nombre de slide (100 * nb de slide) */
+	transition: all 1s ease-out;
+}
+
+.images{
+	height: 100%;
+	width: 100%;
+	filter: blur(5px);
+}
+.images:nth-child(1){
+	background-image: url('../img/slide1.jpg');
+	background-size: cover;
+}
+.images:nth-child(2){
+	background-image: url('../img/slide2.jpg');
+	background-size: cover;
+}
+.images:nth-child(3){
+	background-image: url('../img/slide3.jpg');
+	background-size: cover;
+}
+.images:nth-child(4){
+	background-image: url('../img/slide4.jpg');
+	background-size: cover;
+}
+.images:nth-child(5){
+	background-image: url('../img/slide5.jpg');
+	background-size: cover;
+}
+
+
+/*********************************
+La partie présentation de l'agence
+*********************************/
+
+#nouscontacter{/* Visible sur pc & tablette */
+	display: block;
+	background-color: #00B0F0;
+	color: white;
+	border: none;
+	width: 200px;
+	height: 50px;
+	text-transform: uppercase;
+	font-weight: bolder;
+	margin: auto;
+	margin-top: 50px;
+}
+
+
+/********************************
+La partie prestations de l'agence
+********************************/
+
+.contenu > p{
+	padding: 0.5em;
+	font-size: 1.2em;
+}
+
+.contenu > ul > li{
+	font-size: 1em;
+}
+
+
+/*********************************
+La partie presentation de l'équipe
+*********************************/
+
+.carte{
+	display: grid;
+	grid-template-columns: 32% 63%;
+	grid-gap: 5%;
+	margin-bottom: 1em;
+}
+
+.avant{
+	display: initial;
+}
+
+.avant > img{
+	min-height: 100%;
+	max-width: 100%;
+}
+
+.arrière > img{
+	display: none;
+}
+
+
+/****************
+La partie article
+****************/
+
+.article{
+	grid-template-areas: 'photo titre titre'
+								'photo contenu contenu'
+								'rien rien plus';
+	grid-template-columns: 45% auto auto;
+}
+
+.article > p{
+	padding: 0.5em 4em;
+}
+
+.article > img{
+	width: 100%;
+	max-width: 100%;
+}
+
+.article > a:hover{
+	text-decoration: underline;
+}
+
+/****************
+La partie article
+****************/
+
+.article{
+	grid-template-areas: 'titre titre titre'
+								'photo photo photo'
+								'contenu contenu contenu'
+								'rien rien plus';
+	padding: 2em 5em;
+}
+
+.article > h3{
+	padding: 1em 2em;
+}
+
+.article > p{
+	padding: 0.5em 2em;
+}
+
+.article > img{
+	margin: auto;
+	display: initial;
+	width: 70%;
+	max-width: 400px;
+}
+
+
+/*****************
+Le bloc de contact
+*****************/
+
+#bloc_contact{
+	margin-bottom: 260px; /* Pour que le footer reste apparent */
+	box-shadow: 0 20px 70px black; /* Pour le footer */
+}
+
+#intermediaire > #bloc_formulaire{
+	grid-template-columns: 85%;
+}
+
+#plan{
+	height: 350px;
+}
+
+
+/********
+Le footer
+********/
+
+/* Sur son propre fichier footer.css */

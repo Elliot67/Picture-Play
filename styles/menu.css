@@ -1,0 +1,163 @@
+/********************
+Le menu de navigation
+********************/
+
+/* Pour tout dont mobile & tablette */
+
+/* Petite icone pour ouvrir le menu */
+.petiteicone{
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin: 50px;
+	z-index: 101;
+	cursor: pointer;
+	width: 60px;
+	height: 50px;
+}
+
+.ouvrirmenu{
+	height: 7px;
+	width: 50px;
+	background-color: #00B0F0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition-duration: 0.3s;
+}
+.ouvrirmenu:before{
+	position: absolute;
+	content:"";
+	height: 7px;
+	width: 50px;
+	background-color: #00B0F0;
+	top: -16px;
+	transition-duration: 0.5s;
+}
+.ouvrirmenu:after{
+	content:"";
+	position: absolute;
+	top: 16px;
+	background-color: #00B0F0;
+	height: 7px;
+	width: 50px;
+	transition-duration: 0.3s;
+}
+/* animation */
+.tourner .ouvrirmenu{
+	background-color: #ffffff00;
+}
+.tourner .ouvrirmenu:before{
+	top:0;
+	transform: rotate(225deg);
+	box-shadow: 0 2px 5px black;
+}
+.tourner .ouvrirmenu:after{
+	top: 0;
+	transform: rotate(-45deg);
+	box-shadow: 0 2px 5px black;
+}
+
+
+/* Base du menu */
+.menu_navigation{
+	position: fixed;
+	top:0;
+	left:0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	justify-content: center;
+	transform: translateX(-100%);
+	background-color: #1E2020D9;
+	transition-duration: 1s;
+	opacity: 0;
+}
+
+/* Fond avec un dégradé */
+#menu_navigation2{
+	display: flex;
+	flex-direction: column;
+	margin:0;
+	padding: 0;
+	height: 100%;
+	justify-content: space-evenly;
+}
+
+/* Liens vers les parties du site */
+.menu_lien{
+	text-decoration: none;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	border-bottom: solid #00B0F0 2px;
+	height: 100%;
+}
+
+.deplacermenu{
+	transform: translateX(0);
+	opacity: 1;
+}
+
+/* Pour que le menu redirige à la bonne hauteur (et que le menu ne cache pas le haut de la partie)*/
+.pourmenu{
+	position: relative;
+}
+
+.clickmenu{
+	position: absolute;
+	left:0;
+	top: -50px;
+}
+
+@media screen and (min-width: 1200px){
+
+	/* Version ordinateur */
+	.ouvrirmenu{
+		display: none;
+	}
+
+	/* Base du menu */
+	.menu_navigation{
+		position: sticky;
+		bottom: auto;
+		background-color: white;
+		display: flex;
+		border-bottom: solid #00B0F0 5px;
+		transform: translateX(0);
+		transition-duration: 0s;
+		opacity: 1;
+	}
+
+	/* Fond avec un dégradé */
+	#menu_navigation2{
+		flex-direction: row;
+		background: linear-gradient(to right, #7eadd1 ,#4077c7, #7eadd1);
+	}
+
+	/* Liens vers les parties du site */
+	.menu_lien{
+		background-color: white;
+		color: black;
+		padding: 0 20px;
+		line-height: 60px;
+		font-size: 30px;
+		transition-duration: 0.5s;
+		border: none;
+	}
+	.menu_lien:hover{
+		background-color: transparent;
+	}
+
+	/* Pour que le menu redirige à la bonne hauteur (et que le menu ne cache pas le haut de la partie)*/
+	.pourmenu{
+		position: relative;
+	}
+
+	.clickmenu{
+		position: absolute;
+		left:0;
+		top: -50px;
+	}
+}

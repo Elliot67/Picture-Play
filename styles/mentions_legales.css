@@ -1,0 +1,61 @@
+/* Général */
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Questrial';
+	background-color: #1E2020;
+}
+
+/********************
+Page mentions légales
+********************/
+
+#tout{
+	height: 100%;
+	width: 100%;
+	background-color: white;
+}
+/* Spécial pour les différentes formes du footer */
+@media screen and (min-width: 680px){
+	#tout{ /* tablette & ordinateur */
+		margin-bottom: 250px;
+		box-shadow: 0 20px 70px -20px black;
+	}
+}
+
+
+/* A REFAIRE ENTIEREMENT */
+.page_mentions_legales_titre{
+	background-color: #1E2020;
+	padding: 50px;
+	color: white;
+	font-family: 'Montserrat';
+	font-size: 40px;
+	text-transform: uppercase;
+	margin: auto;
+	text-align: center;
+	padding-top : 130px;
+}
+
+#page_mentions_legales{
+	background-color: white;
+	width: 1100px;
+	text-align:center;
+	margin: auto;
+	padding-bottom: 80px;
+}
+
+#page_mentions_legales > h4{
+	padding-top: 20px;
+	padding-bottom:0;
+	font-weight: bolder;
+	font-size: 22px;
+}
+#page_mentions_legales > p{
+	margin: 1px;
+	font-size: 18px;
+}
